@@ -8,13 +8,14 @@ import WhyChooseUs from './WhyChooseUs/WhyChooseUs';
 const Home = () => {
   return (
     <div className="home">
-      {/* First Section */}
+      {/* First Section - Hero banner with a title */}
       <div className="homepage-first-section">
         <div className="content-container" id='home-bg'>
           <h1 className="title">Caring for Your</h1>
         </div>
       </div>
 
+      {/* Second Section - Introduction with text */}
       <div className="homepage-second-section">
         <div className="content-container">
           <div className="two-columns">
@@ -27,6 +28,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Third Section - Image display */}
       <div className="homepage-third-section">
         <div className="content-container">
           <img
@@ -36,30 +39,24 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className='mobile-home'>
 
-      <div className="content-container-mobile">
+      {/* Mobile Version - Adapted content for mobile view */}
+      <div className='mobile-home'>
+        <div className="content-container-mobile">
           <h1 className="title-mobile">Caring for Your WELL-BEING</h1>
         </div>
         <div className="column-mobile">
-              <p id='home-text-mobile'>We are dedicated to providing the highest quality of care to our patients. Our compassionate staff is here to support your health and wellness journey.</p>
-            </div>
+          <p id='home-text-mobile'>We are dedicated to providing the highest quality of care to our patients. Our compassionate staff is here to support your health and wellness journey.</p>
+        </div>
       </div>
 
-
-{/* Our Doctors */}
-  
-<AboutSection /> 
-    <ServiceAndCarousel />
-    <OurDoctors />
-    <WhyChooseUs />
-
-    
-
+      {/* Additional Sections - Dynamic content from other components */}
+      <AboutSection />
+      <ServiceAndCarousel />
+      <OurDoctors />
+      <WhyChooseUs />
     </div>
   );
 };
-
-
 
 export default Home;
