@@ -3,7 +3,6 @@
 }
 
 /* First Section */
-
 #home-bg {
   margin-top: 20px;
   padding-top: 20px;
@@ -13,6 +12,7 @@
   background-position: right top;
   background-repeat: no-repeat;
 }
+
 .homepage-first-section {
   align-items: left;
   padding: 0 20px;
@@ -68,26 +68,32 @@
   object-fit: cover;
   border-radius: 80px 10px;
 }
+
 .mobile-home {
   display: none;
 }
 
+/* Mobile View Styles */
 @media (max-width: 768px) {
   .mobile-home {
     display: block;
     width: 85%;
     margin: 0 auto;
   }
+
   #home-text,
   #home-bg {
     display: none;
   }
+
   .title {
     display: none;
   }
+
   .team-image {
     border-radius: 0px;
   }
+
   .title-mobile {
     font-size: 35px;
     line-height: 1.2;
@@ -97,6 +103,7 @@
     margin-bottom: 15px;
     text-transform: uppercase;
   }
+
   .column-mobile {
     text-align: center;
     flex: 1 1;
@@ -105,6 +112,7 @@
     margin: 0 auto;
   }
 
+  /* About Section */
   .about-section-container {
     display: block;
     justify-content: space-between;
@@ -126,10 +134,12 @@
     font-size: 18px;
     line-height: 1.76;
   }
+
   .about-title {
     line-height: 1.2;
     text-align: center !important;
   }
+
   .about-label {
     color: #368387;
     background-color: rgba(67, 186, 127, 0.1);
@@ -144,9 +154,11 @@
     margin: 0 auto; /* Centers the element itself within its parent container */
     width: 100px;
   }
+
   .about-left-column p {
     text-align: center;
   }
+
   .info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -154,11 +166,14 @@
     margin: 20px 0;
     width: 100%;
   }
+
   .learn-more-button {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
   }
+
+  /* Service Carousel Section */
   .service-carousel-container {
     display: block;
     justify-content: space-between;
@@ -171,6 +186,7 @@
   .carousel-item {
     flex: 0 0 100% !important; /* Show one item at a time on mobile */
   }
+
   .small-text {
     font-size: 18px;
     line-height: 1.76;
@@ -182,6 +198,7 @@
     width: 150px;
   }
 
+  /* Our Doctors Section */
   .our-doctors-section {
     display: block;
     justify-content: space-between;
@@ -190,16 +207,20 @@
     margin: 0 auto !important;
     padding: 30px 0px 30px 0px !important;
   }
+
   .our-doctors-header {
     display: block !important;
   }
+
   .view-all-doctors-btn {
     display: none;
   }
+
   .doctors-grid-home {
     display: block !important;
   }
 
+  /* Why Choose Us Section */
   .why-choose-us-section {
     display: block !important;
     justify-content: space-between;
@@ -208,6 +229,7 @@
     margin: 0 auto !important;
     padding: 30px 0px 30px 0px !important;
   }
+
   .left-column-last {
     background-color: #ecf8f2;
     padding: 20px !important;
@@ -215,6 +237,7 @@
     flex: 0.6 1;
     margin-right: 0px;
   }
+
   .book-appointment-btn {
     display: flex !important; /* Enables flexbox */
     justify-content: center; /* Centers horizontally */
@@ -223,14 +246,17 @@
     margin: 0 auto; /* Centers the element itself within its parent container */
     width: 250px;
   }
+
   .login-button,
   .logout-button {
     font-size: 16px !important;
     padding: 9px 35px !important;
   }
+
   .main-title {
     text-align: center !important;
   }
+
   .service-heading {
     line-height: 1.2;
   }
