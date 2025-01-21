@@ -1,62 +1,35 @@
 import React from 'react';
-import AboutSection from './AboutSection/AboutSection';
-import './Home.css';
-import OurDoctors from './OurDoctors/OurDoctors';
-import ServiceAndCarousel from './ServiceSection/ServiceAndCarousel';
-import WhyChooseUs from './WhyChooseUs/WhyChooseUs';
+import './WhyChooseUs.css';
+import backgroundVideo from './video3.mp4';
 
-const Home = () => {
+const WhyChooseUs = () => {
   return (
-    <div className="home">
-      {/* First Section - Hero banner with a title */}
-      <div className="homepage-first-section">
-        <div className="content-container" id='home-bg'>
-          <h1 className="title">Caring for Your</h1>
-        </div>
+    <div className="why-choose-us-section">
+      {/* Left column with text content */}
+      <div className="left-column-last">
+        <span className="small-text">Why Choose Us</span>
+        <h2 className="main-title">Why Should You <br /> Choose Us?</h2>
+        {/* List of reasons to choose the service */}
+        <ul className="why-choose-us-list">
+          <li className="list-item">Top specialist doctor</li>
+          <li className="list-item">State of the art doctor services</li>
+          <li className="list-item">Discount for all medical treatment</li>
+          <li className="list-item">Enrollment is quick and easy</li>
+        </ul>
+        {/* Button to book an appointment */}
+        <button className="book-appointment-btn">Book Appointment</button>
       </div>
 
-      {/* Second Section - Introduction with text */}
-      <div className="homepage-second-section">
-        <div className="content-container">
-          <div className="two-columns">
-            <div className="column">
-              <p id='home-text'>We are dedicated to providing the highest quality of care to our patients. Our compassionate staff is here to support your health and wellness journey.</p>
-            </div>
-            <div className="column">
-              <h1 className="title" id='home-text2'>WELL-BEING</h1>
-            </div>
-          </div>
-        </div>
+      {/* Right column with background video */}
+      <div className="right-column">
+        <video className="background-video" autoPlay loop muted playsInline>
+          <source src={backgroundVideo} type="video/mp4" />
+          {/* Fallback message for unsupported browsers */}
+          Your browser does not support the video tag.
+        </video>      
       </div>
-
-      {/* Third Section - Image display */}
-      <div className="homepage-third-section">
-        <div className="content-container">
-          <img
-            src={require('./successful-medical-team_329181-9252.jpg')} 
-            alt="Successful Medical Team"
-            className="team-image"
-          />
-        </div>
-      </div>
-
-      {/* Mobile Version - Adapted content for mobile view */}
-      <div className='mobile-home'>
-        <div className="content-container-mobile">
-          <h1 className="title-mobile">Caring for Your WELL-BEING</h1>
-        </div>
-        <div className="column-mobile">
-          <p id='home-text-mobile'>We are dedicated to providing the highest quality of care to our patients. Our compassionate staff is here to support your health and wellness journey.</p>
-        </div>
-      </div>
-
-      {/* Additional Sections - Dynamic content from other components */}
-      <AboutSection />
-      <ServiceAndCarousel />
-      <OurDoctors />
-      <WhyChooseUs />
     </div>
   );
 };
 
-export default Home;
+export default WhyChooseUs;
