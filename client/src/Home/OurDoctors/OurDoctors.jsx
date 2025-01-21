@@ -1,6 +1,7 @@
 import React from 'react';
 import './OurDoctors.css';
 
+// Array of doctor objects with their details
 const doctors = [
   {
     image: 'images/Dr. Sarah Hendricks, MD, FESC - Cardiology.jpg',
@@ -31,6 +32,7 @@ const doctors = [
 const OurDoctors = () => {
   return (
     <div className="our-doctors-section">
+      {/* Header section with title and button */}
       <div className="our-doctors-header">
         <div className="left-column">
           <span className="small-text">Our Specialists</span>
@@ -43,12 +45,17 @@ const OurDoctors = () => {
         </div>
       </div>
 
+      {/* Grid displaying doctor cards */}
       <div className="doctors-grid-home">
         {doctors.map((doctor, index) => (
           <div className="doctor-card" key={index}>
+            {/* Image of the doctor */}
             <img src={require(`./${doctor.image}`)} alt={doctor.name} className="doctor-image" />
+            {/* Doctor's specialization */}
             <span className="doctor-specialization">{doctor.specialization}</span>
+            {/* Doctor's name */}
             <h3 className="doctor-name">{doctor.name}</h3>
+            {/* Doctor's qualifications */}
             <p className="doctor-qualifications">{doctor.qualifications}</p>
           </div>
         ))}
