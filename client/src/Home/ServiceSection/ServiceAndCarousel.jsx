@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './ServiceAndCarousel.css';
 
+// Array of service objects with their details
 const services = [
   {
     image: 'images/cardiology.png',
@@ -31,11 +32,14 @@ const services = [
 ];
 
 const ServiceAndCarousel = () => {
+  // State to track the current index of the carousel
   const [currentIndex, setCurrentIndex] = useState(0);
+  // State to track the number of visible items in the carousel based on screen size
   const [visibleItems, setVisibleItems] = useState(3); // Default to 3 items for desktop
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    // Function to update the number of visible items based on window width
     const updateVisibleItems = () => {
       if (window.innerWidth <= 768) {
         setVisibleItems(1); // Show 1 item for mobile
@@ -44,20 +48,24 @@ const ServiceAndCarousel = () => {
       }
     };
 
+    // Add event listener to handle window resize
     window.addEventListener('resize', updateVisibleItems);
     updateVisibleItems(); // Set initial value
 
+    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', updateVisibleItems);
     };
   }, []);
 
+  // Function to handle the "Next" button click
   const handleNext = () => {
     if (currentIndex < services.length - visibleItems) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
 
+  // Function to handle the "Previous" button click
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prevIndex) => prevIndex - 1);
@@ -81,6 +89,7 @@ const ServiceAndCarousel = () => {
             transform: `translateX(-${(currentIndex * 100) / visibleItems}%)`,
           }}
         >
+          {/* Render each service as a carousel item */}
           {services.map((service, index) => (
             <div className="carousel-item" key={index}>
               <div className="service-card">
@@ -96,10 +105,12 @@ const ServiceAndCarousel = () => {
 
         {/* Carousel controls */}
         <div className="carousel-controls">
+          {/* Left control */}
           <FaChevronLeft
             className={`control-left ${currentIndex === 0 ? 'disabled' : ''}`}
             onClick={handlePrev}
           />
+          {/* Right control */}
           <FaChevronRight
             className={`control-right ${
               currentIndex === services.length - visibleItems ? 'disabled' : ''
